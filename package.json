@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zroberts/walmart/issues"
   },
-  "homepage": "https://github.com/zroberts/walmart#readme"
+  "homepage": "https://github.com/zroberts/walmart#readme",
+  "dependencies": {
+    "request": "^2.76.0"
+  }
 }
