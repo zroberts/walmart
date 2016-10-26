@@ -4,28 +4,35 @@ WVUP Fall 2016
 
 
 # SETUP VAR
+```
 var walmart = require("walmart");
-
+```
 
 # SETUP API KEY
+```
 walmart.setApi(<API KEY>);
-
+```
 
 ##########
 # SEARCHING
+```
 walmart.search(<searchObject>, <CALLBACK>)
-searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice optional 
+```
+searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice optional
+
 EXAMPLE -
+```
 var serachObject = {
   searchTerm : 'Playstation',
   minPrice   : '100',
   maxPrice   : '200'
 }
+```
 
 
 # RETURN 
 will return json object with the following fields
-
+```
 id 	(products ID)
 name 	(products name)
 price	(suggested retail price)
@@ -35,6 +42,6 @@ url  (productUrl to click to product)
 image url (url for the "mediumImage")
 provider (Walmart)
 reviews (Numeric value representing how many starts out of 5)
-
+```
 
 
