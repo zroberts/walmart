@@ -1,5 +1,5 @@
 {
-  "name": "walmart-api",
+  "name": "walmart",
   "version": "1.0.0",
   "description": "Walmart Api connector for CS 320 XML, West Virginia University Parkersburg, Spring 2016",
   "main": "index.js",
@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/zroberts/walmart.git"
   },
-  "author": "Zak Roberts",
+  "author": {
+    "name": "Zak Roberts"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zroberts/walmart/issues"
@@ -18,5 +20,12 @@
   "homepage": "https://github.com/zroberts/walmart#readme",
   "dependencies": {
     "request": "^2.76.0"
-  }
+  },
+  "gitHead": "9694b80ecfc2fcb9df3e2455319b00d3005c6bb6",
+  "readme": "# walmart api connecter for CS 320 XML Spring 2016 WVUP\r\n",
+  "readmeFilename": "README.md",
+  "_id": "walmart-api@1.0.0",
+  "_shasum": "f21d8977e4b5aee6c320f34d259e956b6beffa8e",
+  "_from": "git+https://github.com/zroberts/walmart.git",
+  "_resolved": "git+https://github.com/zroberts/walmart.git#9694b80ecfc2fcb9df3e2455319b00d3005c6bb6"
 }
