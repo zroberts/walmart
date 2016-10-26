@@ -20,10 +20,42 @@ function search(config,params,callback){
 	
 	formedURL += paramGen(params);
 	
-	request(formedURL, function (error, response, body) {
-		if (!error && response.statusCode == 200) {
+	request(formedURL, function (errors, response, body) {
+		//console.log("request was made");
+		if (!errors && response.statusCode == 200) {
 			callback(JSON.parse(body));
-		 }
+		}else if(errors){
+			console.log("The following errors occurred");
+			console.log(errors);
+		}else if(response.statusCode != 200){
+			switch(response.statusCode){
+				case 400:
+					console.log("Code 400: Bad Request");
+					break;
+				case 403:
+					console.log("Code "+response.statusCode + ": Forbidden. Try checking apikey");
+					break;
+				case 404:
+					console.log("Code "+response.statusCode + ": Wrong Endpoint");
+					break;
+				case 414:
+					console.log("Code "+response.statusCode + ": Request URI too long");
+					break;
+				case 500:
+					console.log("Code "+response.statusCode + ": Internal Server Error");
+					break;
+				case 502:
+					console.log("Code "+response.statusCode + ": Bad Gateway");
+					break;
+				case 503:
+					console.log("Code "+response.statusCode + ": Service Unavailable/API Maintenance");
+					break;
+				case 504:
+					console.log("Code "+response.statusCode + ": Gateway timeout");
+					break;
+
+			}
+		}
 	});
 }
 

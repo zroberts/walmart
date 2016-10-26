@@ -1,7 +1,16 @@
 
 var walmart = require('./core');
+var walmartApiKey = {
+	apikey: ''
+}
 
 module.exports = {
+
+	setApi: function(userApiKey){
+		walmartApiKey = {
+			apikey: userApiKey
+		}
+	},
 	search: function(sItems, callback){
 		//console.log(sItems.searchTerm);
 		var test = {
@@ -20,30 +29,34 @@ module.exports = {
 		};
 
 
-		console.log('HERE again');
-		walmart(test, function(resp){
-			console.log('HERE!');
-			//console.log(resp);
-			//console.log(resp.items.length);
-			var outPut = [];
-			for(var i = 0; i < resp.items.length; i++){
-				var tempItem = {
-					'id': resp.items[i].itemId,
-					'sku' : 'No SKU Available',
-					'name' : resp.items[i].name,
-					'price': resp.items[i].msrp,
-					'saleprice': resp.items[i].salePrice,
-					'category': resp.items[i].categoryPath,
-					'url': resp.items[i].productUrl,
-					'imageUrl': resp.items[i].mediumImage,
-					'provider': 'walmart',
-					'reviews': resp.items[i].customerRating
+		//console.log('HERE again');
+		if(walmartApiKey.apikey == ''){
+			console.log('Pleas provide an API key')
+		}else{
+			walmart(walmartApiKey, test, function(resp){
+				console.log('HERE!');
+				//console.log(resp);
+				//console.log(resp.items.length);
+				var outPut = [];
+				for(var i = 0; i < resp.items.length; i++){
+					var tempItem = {
+						'id': resp.items[i].itemId,
+						'sku' : 'No SKU Available',
+						'name' : resp.items[i].name,
+						'price': resp.items[i].msrp,
+						'saleprice': resp.items[i].salePrice,
+						'category': resp.items[i].categoryPath,
+						'url': resp.items[i].productUrl,
+						'imageUrl': resp.items[i].mediumImage,
+						'provider': 'walmart',
+						'reviews': resp.items[i].customerRating
+					};
+					outPut.push(tempItem);
 				};
-				outPut.push(tempItem);
-			};
 
-			callback(outPut);
-		});
+				callback(outPut);
+			});
+		}
 	}
 }
 //module.exports = walmartApi;

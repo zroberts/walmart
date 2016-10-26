@@ -6,7 +6,7 @@
 
 ##########
 # SETUP API KEY
-# walmart.api(<API KEY>)
+# walmart.setApi(<API KEY>);
 
 
 ##########
