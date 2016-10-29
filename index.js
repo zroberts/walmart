@@ -13,28 +13,50 @@ module.exports = {
 	},
 	search: function(sItems, callback){
 		//console.log(sItems.searchTerm);
-		var test = {
-			"type"			: "search",
-			"query" 		: sItems.searchTerm,
-			//"itemId" 		: "174126186",
-			//"categoryId" 	: "3914",
-			//"start" 		: "1",
-			"sort" 			: "price",
-			"order" 		: "desc",
-			"numItems"		: "10",
-			"format"		: "json",  
-			"responseGroup" : "base",
-			"facet" 		: "on", 
-			"facet.range" 	: "price:["+sItems.minPrice+" TO "+sItems.maxPrice+"]"
-		};
+		//
+		var search;
+		if(sItems.searchTerm && sItems.minPrice && sItems.maxPrice){
+			search = {
+				"type"			: "search",
+				"query" 		: sItems.searchTerm,
+				//"itemId" 		: "174126186",
+				//"categoryId" 	: "3914",
+				//"start" 		: "1",
+				"sort" 			: "price",
+				"order" 		: "desc",
+				"numItems"		: "10",
+				"format"		: "json",  
+				"responseGroup" : "base",
+				"facet" 		: "on", 
+				"facet.range" 	: "price:["+sItems.minPrice+" TO "+sItems.maxPrice+"]"
+			};
+		}else if(sItems.searchTerm){
+			search = {
+				"type"			: "search",
+				"query" 		: sItems.searchTerm,
+				//"itemId" 		: "174126186",
+				//"categoryId" 	: "3914",
+				//"start" 		: "1",
+				"sort" 			: "price",
+				"order" 		: "desc",
+				"numItems"		: "10",
+				"format"		: "json",  
+				"responseGroup" : "base"
+				//"facet" 		: "on", 
+				//"facet.range" 	: "price:["+sItems.minPrice+" TO "+sItems.maxPrice+"]"
+			};
+		}else{
+			console.log("Please search for something");
+			return;
+		}
 
 
 		//console.log('HERE again');
 		if(walmartApiKey.apikey == ''){
 			console.log('Pleas provide an API key')
 		}else{
-			walmart(walmartApiKey, test, function(resp){
-				console.log('HERE!');
+			walmart(walmartApiKey, search, function(resp){
+				//onsole.log('HERE!');
 				//console.log(resp);
 				//console.log(resp.items.length);
 				var outPut = [];
