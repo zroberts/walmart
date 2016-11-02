@@ -50,7 +50,7 @@ will return an array of json object with the following fields
 ]
 ```
 
-### To access
+#### To access the array - 
 ```
 resp[i].id
 resp[i].namne
