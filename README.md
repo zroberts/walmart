@@ -3,18 +3,18 @@ CS 320 XML
 WVUP Fall 2016
 
 
-# SETUP VAR
+# Setup Object
 ```
 var walmart = require("walmart");
 ```
 
-# SETUP API KEY
+# Setting API Key
 ```
 walmart.setApi(<API KEY>);
 ```
 
 ##########
-# SEARCHING
+# Searching
 ```
 walmart.search(<searchObject>, function(err, res){
 	
@@ -22,7 +22,7 @@ walmart.search(<searchObject>, function(err, res){
 ```
 searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice optional
 
-EXAMPLE -
+### EXAMPLE -
 ```
 var serachObject = {
   searchTerm : 'Playstation',
@@ -32,7 +32,7 @@ var serachObject = {
 ```
 
 
-# RETURN 
+### RETURN 
 will return json object with the following fields
 ```
 id 	(products ID)
