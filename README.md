@@ -35,15 +35,15 @@ var serachObject = {
 ### RETURN 
 will return json object with the following fields
 ```
-id 	(products ID)
-name 	(products name)
-price	(suggested retail price)
-saleprice (current price of the object)
-category (the Category Path example - Video Games/Playstation 3/Playstation 3 Consoles)
-url  (productUrl to click to product)
-image url (url for the "mediumImage")
-provider (Walmart)
-reviews (Numeric value representing how many starts out of 5)
+id: 	   <the product ID>,
+name:	   <the product name>,
+price:	   <msrp>,
+saleprice: <current price>,
+category:  <category parth from walmart>,
+url: 	   <URL to product on Walmart.com>,
+imageUrl:  <url for the medium-sized image>,
+provider:  <STATIC Walmart>,
+reviews:   <number out of 5>
 ```
 
 
