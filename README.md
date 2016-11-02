@@ -16,7 +16,9 @@ walmart.setApi(<API KEY>);
 ##########
 # SEARCHING
 ```
-walmart.search(<searchObject>, <CALLBACK>)
+walmart.search(<searchObject>, function(err, res){
+	
+});
 ```
 searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice optional
 

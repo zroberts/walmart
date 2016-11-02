@@ -12,16 +12,11 @@ module.exports = {
 		}
 	},
 	search: function(sItems, callback){
-		//console.log(sItems.searchTerm);
-		//
 		var search;
 		if(sItems.searchTerm && sItems.minPrice && sItems.maxPrice){
 			search = {
 				"type"			: "search",
 				"query" 		: sItems.searchTerm,
-				//"itemId" 		: "174126186",
-				//"categoryId" 	: "3914",
-				//"start" 		: "1",
 				"sort" 			: "price",
 				"order" 		: "desc",
 				"numItems"		: "10",
@@ -34,31 +29,26 @@ module.exports = {
 			search = {
 				"type"			: "search",
 				"query" 		: sItems.searchTerm,
-				//"itemId" 		: "174126186",
-				//"categoryId" 	: "3914",
-				//"start" 		: "1",
 				"sort" 			: "price",
 				"order" 		: "desc",
 				"numItems"		: "10",
 				"format"		: "json",  
 				"responseGroup" : "base"
-				//"facet" 		: "on", 
-				//"facet.range" 	: "price:["+sItems.minPrice+" TO "+sItems.maxPrice+"]"
 			};
 		}else{
-			console.log("Please search for something");
+			callback("Something needs to be searched for");
 			return;
 		}
 
-
-		//console.log('HERE again');
 		if(walmartApiKey.apikey == ''){
-			console.log('Pleas provide an API key')
+			callback("API Key needs to be set");
+			return;
 		}else{
-			walmart(walmartApiKey, search, function(resp){
-				//onsole.log('HERE!');
-				//console.log(resp);
-				//console.log(resp.items.length);
+			walmart(walmartApiKey, search, function(err, resp){
+				if(err){
+					callback(err);
+					return;
+				}
 				var outPut = [];
 				for(var i = 0; i < resp.items.length; i++){
 					var tempItem = {
@@ -76,9 +66,8 @@ module.exports = {
 					outPut.push(tempItem);
 				};
 
-				callback(outPut);
+				callback(null, outPut);
 			});
 		}
 	}
 }
-//module.exports = walmartApi;
