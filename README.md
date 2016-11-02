@@ -33,17 +33,26 @@ var serachObject = {
 
 
 ### RETURN 
-will return json object with the following fields
+will return an array of json object with the following fields
 ```
-id: 	   <the product ID>,
-name:	   <the product name>,
-price:	   <msrp>,
-saleprice: <current price>,
-category:  <category parth from walmart>,
-url: 	   <URL to product on Walmart.com>,
-imageUrl:  <url for the medium-sized image>,
-provider:  <STATIC Walmart>,
-reviews:   <number out of 5>
+[
+	{
+		id: 	   <the product ID>,
+		name:	   <the product name>,
+		price:	   <msrp>,
+		saleprice: <current price>,
+		category:  <category parth from walmart>,
+		url: 	   <URL to product on Walmart.com>,
+		imageUrl:  <url for the medium-sized image>,
+		provider:  <STATIC Walmart>,
+		reviews:   <number out of 5>
+	}
+]
 ```
 
-
+### To access
+```
+resp[i].id
+resp[i].namne
+etc...
+```
