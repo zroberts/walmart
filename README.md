@@ -3,18 +3,18 @@ CS 320 XML
 WVUP Fall 2016
 
 
-# Setup Object
+## Setup Object
 ```
 var walmart = require("walmart");
 ```
 
-# Setting API Key
+## Setting API Key
 ```
 walmart.setApi(<API KEY>);
 ```
 
 ##########
-# Searching
+## Searching
 ```
 walmart.search(<searchObject>, function(err, res){
 	
