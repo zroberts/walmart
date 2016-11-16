@@ -33,7 +33,7 @@ searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice o
 
 ### EXAMPLE -
 ```
-var serachObject = {
+var searchObject = {
   searchTerm : 'Playstation',
   minPrice   : '100',
   maxPrice   : '200'
