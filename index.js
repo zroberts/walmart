@@ -51,6 +51,18 @@ module.exports = {
 				}
 				var outPut = [];
 				for(var i = 0; i < resp.items.length; i++){
+					var customerRating,
+						numReviews;
+					if(!resp.items[i].customerRating){
+						customerRating = 0;
+					}else{
+						customerRating = resp.items[i].customerRating;
+					}
+					if(!resp.items[i].numReviews){
+						numReviews = 0;
+					}else{
+						numReviews = resp.items[i].numReviews;
+					}
 					var tempItem = {
 						'id': resp.items[i].itemId,
 						'sku' : 'No SKU Available',
@@ -59,9 +71,12 @@ module.exports = {
 						'saleprice': resp.items[i].salePrice,
 						'category': resp.items[i].categoryPath,
 						'url': resp.items[i].productUrl,
-						'imageUrl': resp.items[i].mediumImage,
+						'imageUrl': resp.items[i].largeImage,
 						'provider': 'walmart',
-						'reviews': resp.items[i].customerRating
+						'reviews': customerRating,
+						'description': resp.items[i].longDescription,
+						'numReviews': numReviews
+
 					};
 					outPut.push(tempItem);
 				};

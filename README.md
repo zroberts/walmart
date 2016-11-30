@@ -33,7 +33,7 @@ searchObject is a JSON Object, with searchTerm required, minPrice and maxPrice o
 
 ### EXAMPLE -
 ```
-var serachObject = {
+var searchObject = {
   searchTerm : 'Playstation',
   minPrice   : '100',
   maxPrice   : '200'
@@ -54,7 +54,9 @@ will return an array of json object with the following fields
 		url: 	   <URL to product on Walmart.com>,
 		imageUrl:  <url for the medium-sized image>,
 		provider:  <STATIC Walmart>,
-		reviews:   <number out of 5>
+		reviews:   <number out of 5, returns 0 if there are no reviews>,
+		numReviews: <number of reviews that have been submited>,
+		description: <description of the item>,
 	}
 ]
 ```

@@ -25,7 +25,7 @@
   "readme": "# walmart api connecter for CS 320 XML Spring 2016 WVUP\r\n",
   "readmeFilename": "README.md",
   "_id": "walmart@1.0.0",
-  "_shasum": "24390d67ea454fb3cbe2d1f363d9de5a46004324",
+  "_shasum": "1475329bd6e9d1c6fb543b5aa76ba65a7c04f9d9",
   "_from": "git+https://github.com/zroberts/walmart.git",
-  "_resolved": "git+https://github.com/zroberts/walmart.git#5a2c4270ed5c9e36032a3cd959b257131758ee3e"
+  "_resolved": "git+https://github.com/zroberts/walmart.git#0afe881c8d94223cab8756eae83e7ad52d4b8fd4"
 }
