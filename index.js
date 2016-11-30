@@ -74,7 +74,7 @@ module.exports = {
 						'imageUrl': resp.items[i].largeImage,
 						'provider': 'walmart',
 						'reviews': customerRating,
-						'description': resp.items[i].longDescription,
+						'description': resp.items[i].shortDescription,
 						'numReviews': numReviews
 
 					};
