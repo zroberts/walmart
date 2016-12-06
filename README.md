@@ -67,3 +67,24 @@ resp[i].id
 resp[i].namne
 etc...
 ```
+
+## Full Example
+```
+var walmart = require('walmart');
+
+walmart.setApi(<YOUR_API_KEY>);
+
+var searchObject = {
+	searchTerm : 'Playstation',
+	minPrice: '25',
+	maxPrice: '100'
+}
+
+walmart.search(searchObject, function(err, res){
+	if(err){
+		console.log(err);
+	}else{
+		console.log(res);
+	}
+
+})
