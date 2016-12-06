@@ -87,4 +87,5 @@ walmart.search(searchObject, function(err, res){
 		console.log(res);
 	}
 
-})
+});
+```
